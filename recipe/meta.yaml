@@ -14,9 +14,9 @@ source:
   sha256: 8bcfeb18f3fb8a58a516348c37369eb8356af4bd3e0688c84a2366e1534608e9
 
 build:
+  noarch: generic
   merge_build_host: True  # [win]
-  number: 0
-  skip: true  # [win32]
+  number: 1000
   rpaths:
     - lib/R/lib/
     - lib/
@@ -46,8 +46,7 @@ about:
     a user-friendly interface to the packages 'pan' and 'jomo', and several functions
     for visualization, data management and the analysis  of multiply imputed data sets.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
-  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:

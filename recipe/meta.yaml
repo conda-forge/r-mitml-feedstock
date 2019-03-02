@@ -1,4 +1,4 @@
-{% set version = '0.3-5' %}
+{% set version = '0.3-7' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,22 +7,22 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: mitml_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/mitml_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mitml/mitml_{{ version }}.tar.gz
-  sha256: 8bcfeb18f3fb8a58a516348c37369eb8356af4bd3e0688c84a2366e1534608e9
+  sha256: c6f796d0059f1b093b599a89d955982fa257de9c45763ecc2cbbce10fdec1e7b
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
-  number: 1000
+  number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-haven
@@ -46,12 +46,28 @@ about:
     a user-friendly interface to the packages 'pan' and 'jomo', and several functions
     for visualization, data management and the analysis  of multiply imputed data sets.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
+    - conda-forge/r
+
+# Package: mitml
+# Type: Package
+# Title: Tools for Multiple Imputation in Multilevel Modeling
+# Version: 0.3-7
+# Date: 2019-01-02
+# Author: Simon Grund [aut,cre], Alexander Robitzsch [aut], Oliver Luedtke [aut]
+# Maintainer: Simon Grund <grund@ipn.uni-kiel.de>
+# BugReports: https://github.com/simongrund1/mitml/issues
+# Imports: pan, jomo, haven, grDevices, graphics, stats, utils
+# Suggests: mice, miceadds, Amelia, lme4, nlme, geepack, survival, knitr, rmarkdown
+# LazyData: true
+# LazyLoad: true
+# Description: Provides tools for multiple imputation of missing data in multilevel modeling. Includes a user-friendly interface to the packages 'pan' and 'jomo', and several functions for visualization, data management and the analysis  of multiply imputed data sets.
+# License: GPL (>= 2)
+# VignetteBuilder: knitr
+# NeedsCompilation: no
+# Packaged: 2019-01-02 10:26:03 UTC; simon
+# Repository: CRAN
+# Date/Publication: 2019-01-07 18:10:03 UTC

@@ -1,4 +1,4 @@
-{% set version = '0.3-7' %}
+{% set version = "0.4-0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mitml_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mitml/mitml_{{ version }}.tar.gz
-  sha256: c6f796d0059f1b093b599a89d955982fa257de9c45763ecc2cbbce10fdec1e7b
+  sha256: fe609154a1d5acd28a6181add118c365fb511584b76ebcc26e58347a0995baaa
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -42,11 +42,9 @@ test:
 about:
   home: https://CRAN.R-project.org/package=mitml
   license: GPL (>= 2)
-  summary: Provides tools for multiple imputation of missing data in multilevel modeling. Includes
-    a user-friendly interface to the packages 'pan' and 'jomo', and several functions
-    for visualization, data management and the analysis  of multiply imputed data sets.
+  summary: Provides tools for multiple imputation of missing data in multilevel modeling. Includes a user-friendly interface to the packages 'pan' and 'jomo', and several functions for visualization, data management and the analysis  of multiply imputed data sets.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:

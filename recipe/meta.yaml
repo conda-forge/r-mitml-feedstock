@@ -41,7 +41,7 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=mitml
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: Provides tools for multiple imputation of missing data in multilevel modeling. Includes a user-friendly interface to the packages 'pan' and 'jomo', and several functions for visualization, data management and the analysis  of multiply imputed data sets.
   license_family: GPL3
   license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2

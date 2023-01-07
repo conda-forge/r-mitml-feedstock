@@ -1,4 +1,4 @@
-{% set version = "0.4-3" %}
+{% set version = "0.4-4" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mitml_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mitml/mitml_{{ version }}.tar.gz
-  sha256: 49bd3eb68a60fb2a269e7ddca8b862e1e81e0651e2b29759482fb7bcad452102
+  sha256: 0021482761943ccb88554a1752636f13e83b1d026d79b6e4a53fdfebe296af8a
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/

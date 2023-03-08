@@ -1,11 +1,11 @@
-About r-mitml
-=============
+About r-mitml-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-mitml-feedstock/blob/main/LICENSE.txt)
 
 Home: https://CRAN.R-project.org/package=mitml
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-mitml-feedstock/blob/main/LICENSE.txt)
 
 Summary: Provides tools for multiple imputation of missing data in multilevel modeling. Includes a user-friendly interface to the packages 'pan' and 'jomo', and several functions for visualization, data management and the analysis  of multiply imputed data sets.
 
